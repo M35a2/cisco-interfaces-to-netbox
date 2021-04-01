@@ -5,9 +5,9 @@ then adds the
 Tested only on IOS-XE code
 
 # install modules
-install requests module
-install netbox python module
-install netaddr
+- install requests module
+- install netbox python module
+- install netaddr
 
 # setup variables
 -edit the hosts.csv for your devices
