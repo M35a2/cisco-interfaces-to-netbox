@@ -22,69 +22,7 @@ install netaddr
   eg: if vrf == "MYvrf":
   if you have multiple vrf's, copy/paste the two if statements for the vrf's and set the proper ID
   eg: 
-    id = 0
-    //attempt to create prefix if its not already there
-    if vrf == "GRT":
-        id = 1
-        try:
-            netboxPrefix = netbox.ipam.create_ip_prefix(prefix = network, vrf = id)
-        except:
-            print("prefix already exists")   
-    //NEW VRF    
-    elif vrf == "MYvrf":
-        id = 2
-        try:
-            netboxPrefix = netbox.ipam.create_ip_prefix(prefix = network, vrf = id)
-        except:
-            print("prefix already exists")           
-    elif not vrf:
-        try:
-            netboxPrefix = netbox.ipam.create_ip_prefix(prefix = network)
-        except:
-            print("prefix already exists")
-
-   //set VRF ID
-    id2 = 0
-    //attempt to create address
-    if vrf == "GRT":
-        id2 = 1
-        loopback = "Loopback"
-        if search(loopback, role):
-            try:    
-                netboxAPIcall = netbox.ipam.create_ip_address(address = address, vrf = id2, description = description, role = "10")
-            except:
-                print("ip address already exists")
-        else:
-            try:    
-                netboxAPIcall = netbox.ipam.create_ip_address(address = address, vrf = id2, description = description)
-            except:
-                print("ip address already exists")
-    //NEW VRF     
-    elif vrf == "MYvrf":
-        id2 = 2
-        loopback = "Loopback"
-        if search(loopback, role):
-            try:    
-                netboxAPIcall = netbox.ipam.create_ip_address(address = address, vrf = id2, description = description, role = "10")
-            except:
-                print("ip address already exists")
-        else:
-            try:    
-                netboxAPIcall = netbox.ipam.create_ip_address(address = address, vrf = id2, description = description)
-            except:
-                print("ip address already exists")           
-    elif vrf == "":
-        loopback = "Loopback"
-        if search(loopback, role):
-            try:    
-                netboxAPIcall = netbox.ipam.create_ip_address(address = address, description = description, role = "10")
-            except:
-                print("ip address already exists")
-        else:
-            try:    
-                netboxAPIcall = netbox.ipam.create_ip_address(address = address, description = description)
-            except:
-                print("ip address already exists")  
+   ![multi-vrf example](https://github.com/M35a2/cisco-interfaces-to-netbox/blob/main/screenshots/multivrf%20example.PNG)
 
 to execute:
 python3 run.py
