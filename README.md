@@ -1,9 +1,12 @@
 # cisco-interfaces-to-netbox
 Takes interfaces in a switch or router and adds the IP address to netbox
+
 it loops through a csv list of devices and pulls the vrf information and ip information
+
 then adds the prefix and IP's to netbox
 
 If you need help with this, or run into an issue, let me know. I would be glad to help. 
+
 This code is not production ready. Tested only on IOS-XE code in a lab.
 
 # install modules
